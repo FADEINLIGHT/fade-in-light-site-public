@@ -458,7 +458,7 @@ body {
     background: var(--light-bg);
     padding: 1.5rem 2rem;
     margin-bottom: 1rem;
-    border-radius: var(--radius);
+    border-radius: 0 var(--radius) var(--radius) 0;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     display: flex;
