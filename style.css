@@ -674,16 +674,15 @@ div {
     justify-content: center;
     align-content: center;
     justify-items: center;
+    margin: auto;
 }
 
 .image-grid-big {
     display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
 }
 
 .image-grid-item {
-    width: fit-content;
+    width: min-content;
     height: 10vh;
     background: var(--light-bg);
     border-radius: var(--radius);
@@ -696,7 +695,7 @@ div {
 }
 
 .image-grid-big-item {
-    height: 80vh;
+    height: 40vh;
 }
 
 .image-grid-item:hover {
