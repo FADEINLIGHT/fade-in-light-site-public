@@ -25,6 +25,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', monospace;
+    border: 1px red dashed;
 }
 
 h1,
@@ -48,6 +49,38 @@ body {
     color: var(--text-dark);
     background: var(--light-bg);
     overflow-x: hidden;
+}
+
+img {
+    object-fit: contain;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+[id*='toggle-img'] {
+    display: none;
+}
+
+[id*='toggle-img']:checked~img {
+    width: 90vw;
+    height: 90vh;
+    max-width: none;
+    max-height: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    z-index: 1000;
+    backgrou
+}
+
+a {
+    color: var(--text-light);
+}
+
+div {
+    text-decoration: none;
 }
 
 .container {
@@ -85,8 +118,8 @@ body {
 }
 
 .nav-logo {
-    aspect-ratio: auto;
-    height: max-content;
+    height: 100%;
+    margin: 4px;
 }
 
 .nav-menu {
@@ -149,7 +182,7 @@ body {
 
 .hero-logo {
     aspect-ratio: auto;
-    height: 30vh;
+    height: 30vmin;
 }
 
 .hero-bg {
@@ -176,8 +209,8 @@ body {
 }
 
 .hero-shapes::before {
-    width: 400px;
-    height: 400px;
+    width: 40px;
+    height: 40px;
     background: var(--gradient-start);
     opacity: 0.2;
     top: 10%;
@@ -334,6 +367,8 @@ body {
 .flex-center {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 
 }
 
@@ -535,7 +570,7 @@ body {
 }
 
 .reference-logo {
-    aspect-ratio: auto;
+    object-fit: contain;
     margin: 8px;
     border-radius: 8px;
     height: 20vh;
@@ -632,45 +667,74 @@ body {
 /* ==========================================
    Portfolio
    ========================================== */
-.portfolio-grid {
+.image-grid {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-flow: row;
     gap: 2rem;
+    align-items: center;
+    justify-content: start;
+    align-content: center;
 }
 
-.portfolio-item {
+.image-grid-big {
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+}
+
+.image-grid-item {
+    width: 100%;
+    height: 20vh;
+    max-height: 400px;
     background: var(--light-bg);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: auto;
+    align-self: center;
 }
 
-.portfolio-item:hover {
+.image-grid-big-item {
+    height: fit-content;
+    max-height: 1000px;
+    background: var(--light-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: auto;
+    align-self: center;
+}
+
+.image-grid-item:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
-.portfolio-item .image-wrapper {
+.image-grid-item .image-wrapper {
     position: relative;
     overflow: hidden;
     height: 220px;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
 }
 
-.portfolio-item img {
+.image-grid-item img,
+.image-grid-item a {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-height: 400px;
+    object-fit: contain;
     transition: transform 0.6s ease;
 }
 
-.portfolio-item:hover img {
+.image-grid-item:hover img {
     transform: scale(1.1);
 }
 
-.portfolio-item .image-overlay {
+.image-grid-item .image-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(15, 15, 15, 0.8), transparent);
@@ -681,37 +745,37 @@ body {
     padding: 1.5rem;
 }
 
-.portfolio-item:hover .image-overlay {
+.image-grid-item:hover .image-overlay {
     opacity: 1;
 }
 
-.portfolio-item .image-overlay h3 {
+.image-grid-item .image-overlay h3 {
     color: var(--text-light);
     font-size: 1.3rem;
 }
 
-.portfolio-item .content {
+.image-grid-item .content {
     padding: 1.5rem;
 }
 
-.portfolio-item .content h3 {
+.image-grid-item .content h3 {
     color: var(--text-dark);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
 
-.portfolio-item .location {
+.image-grid-item .location {
     color: var(--primary);
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-.portfolio-item .location i {
+.image-grid-item .location i {
     margin-right: 0.3rem;
 }
 
-.portfolio-item .content p {
+.image-grid-item .content p {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
@@ -808,8 +872,7 @@ footer {
         font-size: 2rem;
     }
 
-    .team-grid,
-    .portfolio-grid {
+    .image-grid {
         grid-template-columns: 1fr;
     }
 

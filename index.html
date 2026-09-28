@@ -164,10 +164,10 @@
                 pour tous les budgets.</p>
             <div id="equipment-container"></div>
             <h2 class="section-title">Ils nous font confiance</h2>
-            <div class="flex-center">
-                <a href="https://v2sound.be/"><img class="reference-logo" src="res/ref/v2sound.jpg"></img></a>
-                <img class="reference-logo" src="res/ref/uesm.jpg"></img>
-                <img class="reference-logo" src="res/ref/cardijn.png"></img>
+            <div class="image-grid">
+                <a href=" https://v2sound.be/"><img class="image-grid-item" src="res/ref/v2sound.jpg" /></a>
+                <img class="image-grid-item" src="res/ref/uesm.jpg"></img>
+                <img class="image-grid-item" src="res/ref/cardijn.png"></img>
             </div>
         </div>
     </section>
@@ -209,8 +209,37 @@
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="section-title">Réalisations</h2>
-            <div id="portfolio-grid" class="portfolio-grid">
-                <p style="text-align: center; color: var(--text-muted);">Aucune réalisation pour le moment.</p>
+            <div id="image-grid" class="image-grid image-grid-big">
+                <!-- <p style="text-align: center; color: var(--text-muted);">Aucune réalisation pour le moment.</p> -->
+                <label for="toggle-img-0">
+                    <input type="checkbox" id="toggle-img-0">
+                    <img class="image-grid-item image-grid-big-item" src="res/rea/cardijn.png">
+                </label>
+
+                <label for="toggle-img-1">
+                    <input type="checkbox" id="toggle-img-1">
+                    <img class="image-grid-item image-grid-big-item" src="res/rea/totems.png">
+                </label>
+
+                <label for="toggle-img-2">
+                    <input type="checkbox" id="toggle-img-2">
+                    <img class="image-grid-item image-grid-big-item" src="res/rea/noel_soignies.png">
+                </label>
+
+                <label for="toggle-img-3">
+                    <input type="checkbox" id="toggle-img-3">
+                    <img class="image-grid-item image-grid-big-item" src="res/rea/scene_becon_01.png">
+                </label>
+
+                <label for="toggle-img-4">
+                    <input type="checkbox" id="toggle-img-4">
+                    <img class="image-grid-item image-grid-big-item" src="res/rea/scene_becon_00.png">
+                </label>
+
+                <label for="toggle-img-5">
+                    <input type="checkbox" id="toggle-img-5">
+                    <img class="image-grid-item image-grid-big-item" src="res/rea/studio_be@con.png">
+                </label>
             </div>
         </div>
     </section>
@@ -221,14 +250,14 @@
             <h2 class="section-title">Contact</h2>
             <p class="section-intro">Pour discuter de votre projet, contactez-nous :</p>
             <div class="contact-details">
-                <div class="contact-item">
+                <a class="contact-item" href="mailto:juliensilance@hotmail.com?subject=Inquiry&body=Hello">
                     <div class="icon-mail"></div>
                     <span id="contact-email">juliensilance@hotmail.com</span>
-                </div>
-                <div class="contact-item">
+                </a>
+                <a class="contact-item" href="tel:+32489144339">
                     <div class="icon-phone"></div>
                     <span id="contact-phone">+32 489 14 43 39</span>
-                </div>
+                </a>
             </div>
         </div>
     </section>
